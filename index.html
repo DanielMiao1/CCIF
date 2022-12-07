@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<script src="/polyfills.js"></script>
+		<script>
+			var parameters = {};
+			window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(_, key, value) {
+				return parameters[key] = value;
+			});
+			
+			var found_keys = 0;
+
+			Object.keys(parameters).forEach(function(key) {
+				if (key == "dark_mode" || key == "music") {
+					found_keys++;
+				};
+			});
+
+			if (found_keys < 2) {
+				if (window.document.documentMode) {
+					document.location = "/?dark_mode=0&music=0&ie=1";
+				} else {
+					document.location = "/configurator";
+				};
+			};
+		</script>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+		<meta name="description" content="Climate Change: An article on the cause, impact, and future of climate change.">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Gothic+Coding&family=Roboto:wght@500&display=swap" rel="preload" as="style">
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Gothic+Coding&family=Roboto:wght@500&display=swap" rel="stylesheet">
+		<link href="/style.css" rel="preload" as="style">
+		<link rel="stylesheet" href="/style.css">
+		<link rel="stylesheet" href="/responsive.css">
+		<title>Climate Change</title>
+		<script src="/script.js" defer></script>
+		<script src="/animations.js" defer></script>
+		<script src="/scroll.js" defer></script>
+	</head>
+	<body>
+		<main id="wrapper">
+			<section id="title">
+				<div>
+					<h1>Climate Change</h1>
+					<h2>Cause, Impact, and Future</h2>
+					<br>
+					<p>Daniel M</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter white">Introduction</h3>
+					<div class="animation"></div>
+					<p>
+						In the current age of technological advancements, sophisticated technologies such as computers, vehicles, and smartphones have vital roles in peoples' lives.
+						These technologies are very beneficial to societies around the world, increasing productivity and safety in society by allowing important everyday actions to be done faster, easier, and safer.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter">Introduction</h3>
+					<div class="animation"></div>
+					<p>
+						However, the ultimate environmental impacts of these technologies are often overlooked by most people.
+						Many technologies that exist today, including those described earlier, cause greenhouse gases such as carbon dioxide to be released into the atmosphere.
+						Greenhouse gases can stay in the atmosphere for thousands of years, trapping heat within the Earth, and is the direct cause of climate change.
+						Climate change is causing a devastating effect on common weather patterns, allowing natural disasters to become exceedingly common and severe.
+						Climate change is a major worldwide issue that severely impacts Earth's climate and requires more attention.
+					</p>
+					<div class="images">
+						<div class="container">
+							<div class="image-set" data-selected="0">
+								<img id="ghg1_image" src="data:text/plain;base64,aGk=" alt="Without the greenhouse effect: much of the heat from the sun is reflected back into space from the surface of the Earth.">
+								<img class="hidden" id="ghg2_image" src="data:text/plain;base64,aGk=" alt="With the greenhouse effect: only a small portion of heat from the sun escapes Earth's atmosphere due to the greenhouse gases present.">
+							</div>
+							<button class="previous-image" aria-label="Next Image" disabled>&lt;</button>
+							<button class="next-image light" aria-label="Previous Image">&gt;</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter">Cause</h3>
+					<p class="black">
+						Mobile devices, computers, and household appliances are notable examples of electrical devices that operate on electricity.
+						During usage, electricity is considered a very clean resource.
+						However, the generation of electricity is very different.
+						<br><br>
+						<a href="https://www.eia.gov/electricity/data/browser" target="_blank">Data collected</a> by the United States Energy Information Administration, or EIA, shows that over 63% of all electricity generated in the United States during September of 2022 have been produced through combustion of coal or natural gas.
+						These electricity generation methods have a significantly negative impact on the environment.
+						For example, it is well-known that coal, as a fossil fuel, releases large amounts of potent greenhouse gases such as carbon dioxide into the atmosphere when combusted.
+						In addition to releasing carbon dioxide when burned, natural gas leaks also release large amounts of methane, an incredibly potent greenhouse gas.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter">Cause</h3>
+					<p>
+						Currently, over half of the vehicles in the United States utilize fossil fuels such as gasoline and diesel.
+						Similar to other fossil fuels described earlier, gasoline and diesel emit significant amounts of greenhouse gasses, greatly contributing to climate change.
+					</p>
+					<p>
+						Although technologies such as electricity and vehicles allow people to be more productive in society, these technologies ultimately have a negative impact on the environment due to their greenhouse gas emissions.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter">Impact</h3>
+					<p class="black">
+						Since the mid-20th century, climate change has become a severe worldwide issue deserving more attention.
+						In fact, out of the 17 warmest years <a href="https://www.nasa.gov/press-release/nasa-noaa-data-show-2016-warmest-year-on-record-globally">recorded by NASA and NOAA</a> since modern record-keeping began, 16 were from the last two decades.
+						These warmer temperatures have caused natural disasters to be increasingly common and severe.
+						In particular, warmer temperatures have caused glaciers to melt, raising sea levels worldwide.
+						This has allowed natural disasters dependent on the sea level such as floods and storms to be much more common, causing unprecedented damage to coastal areas.
+						While coastal regions are receiving excessive amounts of water, inland areas are observing increasingly insufficient precipitation, causing severe droughts in many areas.
+						According to the historical data of the National Integrated Drought Information System, over 70% of the United States had abnormally dry weather during early 2013, marking the warmest recorded climate since the 1930s.
+						<br><br>
+						It can be seen that climate change is a major issue impacting societies worldwide and changing the natural weather patterns of Earth.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter">Future</h3>
+					<p class="black">
+						Today, there are many methods of reducing greenhouse gas emissions.
+						Many renewable and environmental-friendly methods of generating electricity exist, utilizing naturally replenished sources such as the sun and wind.
+						Renewable electricity generation methods, including solar and wind power, have many advantages over traditional methods.
+						Most importantly, renewable energy sources emit nearly no greenhouse gasses, making them more environmentally friendly than traditional methods.
+						They are usually cheaper to maintain, and can also be extended to isolated or remote areas without access to traditional generation methods.
+					</p>
+					<p class="black">
+						In contrast, electric vehicles provide a method of reducing greenhouse gas emissions in transportation.
+						Electric vehicles utilize electricity, which can be generated using renewable methods described earlier.
+						Furthermore, electric vehicles provide other advantages over traditional vehicles, including decreased fuel and maintenance costs and lower engine noise.
+						In addition to many other benefits, these methods of reducing greenhouse gas emissions are very effective and arguably the best to reduce the increasing impact of climate change.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter white">Future</h3>
+					<div class="animation"></div>
+					<p>
+						Despite the overwhelming evidence on the urgency and significance of climate change, many people still deny its severity.
+						Historical naturally-occurring climate change events are often cited as counterarguments to the notability of climate change.
+						Although such historical events have occurred, <a href="https://ourworldindata.org/co2-and-other-greenhouse-gas-emissions" target="_blank">greenhouse gas emission data from Our World in Data</a> shows that the level of carbon dioxide in the atmosphere today exceeds every other point in history by at least 39%.
+						The data also show that the level of carbon dioxide in the atmosphere today is increasing faster than at any point in history, making it incredibly difficult for plant and animal species to adapt.
+						Climate change is an urgent issue that requires rapid action by people worldwide, yet people are misinformed by climate change counter-movements, disrupting public support for measures combating climate change.
+						<br><br>
+						People must correctly understand the impact and urgency of climate change and avoid the misinformation created by counter-movements to effectively mitigate the devastating effects of climate change on societies worldwide.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3 class="chapter white">Conclusion</h3>
+					<div class="animation"></div>
+					<p>
+						Today, technologies such as electrical appliances and transportation devices have caused a major worldwide issue that requires more attention.
+						Climate change is causing devastating effects on societies worldwide and changing Earth's natural weather patterns.
+						However, technologies such as electric vehicles and renewable electricity generators provide new and efficient methods of mitigating the disastrous effects of climate change.
+						By using these technologies, people will reduce the unprecedented damage to societies worldwide, preserving Earth's natural climate patterns for future generations.
+					</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<h3>Attributions</h3>
+					<p></p>
+				</div>
+			</section>
+		</main>
+		<button id="previous-page" aria-label="Previous Page"></button>
+		<button id="next-page" class="uninitiated" aria-label="Next Page"></button>
+		<div id="in-animation"></div>
+	</body>
+</html>
