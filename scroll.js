@@ -26,7 +26,11 @@ function previousSection() {
 		}, 200);
 	});
 
-	sections[current_section].scrollIntoView({behavior: "smooth"});
+	if (parameters["animations"]) {
+		sections[current_section].scrollIntoView({behavior: "smooth"});
+	} else {
+		sections[current_section].scrollIntoView();
+	};
 
 	preinitiatePage();
 
@@ -66,7 +70,11 @@ function nextSection() {
 		}, 200);
 	});
 
-	sections[current_section].scrollIntoView({behavior: "smooth"});
+	if (parameters["animations"]) {
+		sections[current_section].scrollIntoView({behavior: "smooth"});
+	} else {
+		sections[current_section].scrollIntoView();
+	};
 
 	preinitiatePage();
 

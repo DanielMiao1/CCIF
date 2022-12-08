@@ -49,8 +49,15 @@ if (parameters["ie"]) {
 	document.getElementById("next-page").classList.remove("uninitiated");
 };
 
-if (parameters["dark_mode"] == "1") {
+if (parameters["dark_mode"]) {
 	document.documentElement.classList.add("dark");
+};
+
+if (parameters["animations"]) {
+	document.body.classList.add("animations");
+} else {
+	document.body.classList.add("no-animations");
+	document.getElementById("next-page").classList.remove("uninitiated");
 };
 
 if ("scrollRestoration" in history) {
@@ -67,8 +74,6 @@ document.documentElement.style.setProperty("--electricity-2-image", "url(/images
 document.documentElement.style.setProperty("--ocean-2-image", "url(/images/ocean_2/1080p" + extension + ")");
 document.documentElement.style.setProperty("--road-1-image", "url(/images/road_1/1080p" + extension + ")");
 document.documentElement.style.setProperty("--solar-1-image", "url(/images/solar_1/1080p" + extension + ")");
-
-var chart_color_choices = ["aqua", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"];
 
 document.getElementById("previous-page").style.display = "none";
 

@@ -15,7 +15,13 @@ document.getElementById("dark-mode-switch").addEventListener("click", function()
 });
 
 document.getElementById("continue").addEventListener("click", function() {
-  var dark_mode, music_enabled;
+  var dark_mode, animations_enabled;
+
+  if (document.getElementById("animation-switch").getAttribute("aria-checked") == "true") {
+    animations_enabled = "1";
+  } else {
+    animations_enabled = "0";
+  };
 
   if (document.getElementById("dark-mode-switch").getAttribute("aria-checked") == "true") {
     dark_mode = "1";
@@ -23,11 +29,6 @@ document.getElementById("continue").addEventListener("click", function() {
     dark_mode = "0";
   };
 
-  if (document.getElementById("music-switch").getAttribute("aria-checked") == "true") {
-    music_enabled = "1";
-  } else {
-    music_enabled = "0";
-  };
 
-  document.location = "/?dark_mode=" + dark_mode + "&music=" + music_enabled;
+  document.location = "/?dark_mode=" + dark_mode + "&animations=" + animations_enabled;
 });

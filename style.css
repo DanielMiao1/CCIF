@@ -291,9 +291,13 @@ p.black {
 	z-index: 2;
 }
 
-#wrapper section.active:nth-of-type(2) .animation {
+body.animations #wrapper section.active:nth-of-type(2) .animation {
 	display: block;
 	animation: scaleYAnimate 300ms ease-in-out;
+}
+
+body.no-animations #wrapper section.active:nth-of-type(2) .animation {
+	display: block;
 }
 
 @keyframes scaleYAnimate {
@@ -332,9 +336,13 @@ p.black {
 	z-index: 1;
 }
 
-#wrapper section.active:nth-of-type(3) .animation {
+body.animations #wrapper section.active:nth-of-type(3) .animation {
 	display: block;
 	animation: scaleYAnimate 300ms ease-in-out;
+}
+
+body.no-animations #wrapper section.active:nth-of-type(3) .animation {
+	display: block;
 }
 
 #wrapper section:nth-of-type(3) .images {
@@ -345,9 +353,13 @@ p.black {
 	left: 100px;
 }
 
-#wrapper section.active:nth-of-type(3) .images {
+body.animations #wrapper section.active:nth-of-type(3) .images {
 	display: block;
 	animation: fade-in 300ms ease-in-out;
+}
+
+body.no-animations #wrapper section.active:nth-of-type(3) .images {
+	display: block;
 }
 
 #wrapper section:nth-of-type(3) img {
@@ -393,8 +405,12 @@ p.black {
 	z-index: 1;
 }
 
-#wrapper section.active:nth-of-type(4) p {
+body.animations #wrapper section.active:nth-of-type(4) p {
 	animation: fade-and-slide-in 500ms ease-in-out;
+	display: block;
+}
+
+body.no-animations #wrapper section.active:nth-of-type(4) p {
 	display: block;
 }
 
@@ -453,8 +469,12 @@ p.black {
 	margin-right: 7vw;
 }
 
-#wrapper section.active:nth-of-type(5) p {
+body.animations #wrapper section.active:nth-of-type(5) p {
 	animation: fade-and-slide-in 500ms ease-in-out;
+	display: block;
+}
+
+body.no-animations #wrapper section.active:nth-of-type(5) p {
 	display: block;
 }
 
@@ -487,8 +507,12 @@ p.black {
 	z-index: 1;
 }
 
-#wrapper section.active:nth-of-type(6) p {
+body.animations #wrapper section.active:nth-of-type(6) p {
 	animation: fade-and-slide-in 500ms ease-in-out;
+	display: block;
+}
+
+body.no-animations #wrapper section.active:nth-of-type(6) p {
 	display: block;
 }
 
@@ -600,9 +624,13 @@ p.black {
 	z-index: 2;
 }
 
-#wrapper section.active:nth-of-type(8) .animation {
+body.animations #wrapper section.active:nth-of-type(8) .animation {
 	display: block;
 	animation: scaleYAnimate 300ms ease-in-out;
+}
+
+body.no-animations #wrapper section.active:nth-of-type(8) .animation {
+	display: block;
 }
 
 #wrapper section:nth-of-type(9) > div::before {
@@ -647,9 +675,13 @@ p.black {
 	z-index: 2;
 }
 
-#wrapper section.active:nth-of-type(9) .animation {
+body.animations #wrapper section.active:nth-of-type(9) .animation {
 	display: block;
 	animation: scaleYAnimate 300ms ease-in-out;
+}
+
+body.noanimations #wrapper section.active:nth-of-type(9) .animation {
+	display: block;
 }
 
 #wrapper section:nth-of-type(10) > div {

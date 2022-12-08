@@ -1,14 +1,18 @@
-setTimeout(function() {
-  var element = document.getElementById("in-animation");
+if (parameters["animations"]) {
+  setTimeout(function() {
+    var element = document.getElementById("in-animation");
 
-  if (parameters["ie"]) {
-    return element.parentNode.removeChild(element);
-  };
+    if (parameters["ie"]) {
+      return element.parentNode.removeChild(element);
+    };
 
-  element.animate([{"opacity": 1}, {"opacity": 0}], {duration: 1000, iterations: 1}).finished.then(function() {
-    element.remove();
-  });
-}, 1000);
+    element.animate([{"opacity": 1}, {"opacity": 0}], {duration: 1000, iterations: 1}).finished.then(function() {
+      element.remove();
+    });
+  }, 1000);
+} else {
+  document.getElementById("in-animation").remove();
+};
 
 function showElement(element, style_display, duration, iterations) {
   duration = typeof duration !== "undefined" ? duration : 200;
@@ -16,7 +20,9 @@ function showElement(element, style_display, duration, iterations) {
   style_display = typeof style_display !== "undefined" ? style_display : "block";
 
 	element.style.display = style_display;
-	element.animate([{opacity: 0}, {opacity: 1}], {duration: duration, iterations: iterations});
+  if (parameters["animations"]) {
+	  element.animate([{opacity: 0}, {opacity: 1}], {duration: duration, iterations: iterations});
+  };
 };
 
 function hideElement(element, style_display, duration, iterations) {
@@ -24,10 +30,14 @@ function hideElement(element, style_display, duration, iterations) {
   iterations = typeof iterations !== "undefined" ? iterations : 1;
   style_display = typeof style_display !== "undefined" ? style_display : "none";
 
-	element.animate([{opacity: 1}, {opacity: 0}], {duration: duration, iterations: iterations}).finished.then(function() {
-		element.style.display = style_display;
-		element.opacity = "1";
-	});
+  if (parameters["animations"]) {
+    element.animate([{opacity: 1}, {opacity: 0}], {duration: duration, iterations: iterations}).finished.then(function() {
+      element.style.display = style_display;
+      element.opacity = "1";
+    });
+  } else {
+    element.style.display = style_display;
+  };
 };
 
 function crossFade(element1, element2) {
@@ -55,13 +65,19 @@ function newChapterAnimation(chapter_number, name) {
   element.classList.add("new-chapter");
   document.body.appendChild(element);
 
-  element.animate([{opacity: "0"}, {opacity: "1"}], {duration: 250, iterations: 1});
+  if (parameters["animations"]) {
+    element.animate([{opacity: "0"}, {opacity: "1"}], {duration: 250, iterations: 1});
 
-  setTimeout(function() {
-    element.animate([{opacity: "1"}, {opacity: "0"}], {duration: 750, iterations: 1}).finished.then(function() {
+    setTimeout(function() {
+      element.animate([{opacity: "1"}, {opacity: "0"}], {duration: 750, iterations: 1}).finished.then(function() {
+        element.remove();
+      });
+    }, 2500);
+  } else {
+    setTimeout(function() {
       element.remove();
-    });
-  }, 2500);
+    }, 2500);
+  };
 };
 
 function preinitiatePage() {
@@ -125,6 +141,10 @@ function initiatePage() {
   });
 
   sections[current_section].classList.add("active");
+  if (!parameters["animations"]) {
+    return;
+  };
+
   switch (current_section) {
     case 1:
       sections[1].getElementsByTagName("p")[0].animate([{marginLeft: -Math.floor(window.innerWidth) + "px"}, {marginLeft: "0px"}], {duration: 1000, iterations: 1, easing: "ease-in-out"});
