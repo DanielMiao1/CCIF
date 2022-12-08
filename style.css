@@ -86,6 +86,10 @@ section h3:not(.chapter) {
 	z-index: 101;
 }
 
+.white {
+	color: white;
+}
+
 .chapter {
 	position: absolute;
 	top: 0;
@@ -93,10 +97,6 @@ section h3:not(.chapter) {
 	font-size: 14px;
 	padding: 10px;
 	z-index: 3;
-}
-
-.chapter.white {
-	color: white;
 }
 
 .new-chapter {

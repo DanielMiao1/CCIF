@@ -48,8 +48,12 @@ function crossFade(element1, element2) {
 	element2.animate([{opacity: 0}, {opacity: 1}], {duration: 1000, iterations: 1});
 };
 
-function newChapterAnimation(chapter_number, name) {
+function newChapterAnimation(chapter_number, name, white=false) {
   var element = document.createElement("div");
+  if (white) {
+    element.classList.add("white");
+  };
+
   var wrapper = document.createElement("div");
   wrapper.classList.add("wrapper");
 
@@ -128,7 +132,14 @@ function preinitiatePage() {
       };
       break;
     case 8:
-      newChapterAnimation(5, "Conclusion");
+      newChapterAnimation(5, "Conclusion", true);
+      if (parameters["ie"]) {
+        document.getElementById("previous-page").classList.add("white");
+        document.getElementById("next-page").classList.add("white");
+      } else {
+        document.getElementById("previous-page").style.setProperty("--border-color", "white");
+        document.getElementById("next-page").style.setProperty("--border-color", "white");
+      };
       break;
   };
 }
