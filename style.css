@@ -18,8 +18,8 @@
 
 body {
 	overflow: hidden;
-	font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-size: 17px;
+	font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	background-color: white;
 	background-color: var(--background-primary);
 	color: #181818;
@@ -49,6 +49,10 @@ a:hover {
 	color: #1057c1;
 }
 
+section h3:not(.chapter) {
+	text-align: center;
+}
+
 .browser-warning {
 	position: fixed;
 	top: 0;
@@ -56,7 +60,7 @@ a:hover {
 	width: 100vw;
 	text-align: center;
 	background-color: rgb(237, 117, 90);
-	z-index: 10;
+	z-index: 105;
 }
 
 .close-browser-warning {
@@ -253,22 +257,9 @@ p.black {
 	width: 100vw;
 	height: 100vh;
 	display: block;
-	background: url("/images/earth_1/720p.png") black;
-	background: var(--earth-1-image) black;
+	background: black;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-
-#wrapper section:nth-of-type(2) > div::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 0;
-	width: 100vw;
-	height: 100vh;
-	display: block;
-	backdrop-filter: blur(5px);
 }
 
 #wrapper section:nth-of-type(2) p {
@@ -509,7 +500,7 @@ p.black {
 	width: 100vw;
 	height: 100vh;
 	display: block;
-	background-color: url("/images/solar_1/720p.png");
+	background: url("/images/solar_1/720p.png");
 	background: var(--solar-1-image);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -573,23 +564,10 @@ p.black {
 	width: 100vw;
 	height: 100vh;
 	display: block;
-	background-color: url("/images/earth_2/720p.png") black;
-	background: var(--earth-2-image) black;
+	background: black;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom right;
-}
-
-#wrapper section:nth-of-type(8) > div::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 0;
-	width: 100vw;
-	height: 100vh;
-	display: block;
-	backdrop-filter: blur(5px);
 }
 
 #wrapper section:nth-of-type(8) p {
@@ -635,22 +613,9 @@ p.black {
 	width: 100vw;
 	height: 100vh;
 	display: block;
-	background: url("/images/earth_1/720p.png") black;
-	background: var(--earth-1-image) black;
+	background: black;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-
-#wrapper section:nth-of-type(9) > div::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 0;
-	width: 100vw;
-	height: 100vh;
-	display: block;
-	backdrop-filter: blur(5px);
 }
 
 #wrapper section:nth-of-type(9) p {

@@ -1,6 +1,15 @@
 if (parameters["ie"]) {
+	function IEVersion() {
+		var user_agent = navigator.userAgent.toLowerCase();
+		return (user_agent.indexOf("msie") != -1) ? parseInt(user_agent.split("msie")[1]) : false;
+	};
+	
+	if (IEVersion() && IEVersion() < 10) {
+		document.location = "/unsupported_browser";
+	};
+	
 	document.location = "#";
-
+	
 	Element.prototype.classList = {
     contains: function(string) {
       return this.className.split(" ").includes(string);
@@ -13,24 +22,17 @@ if (parameters["ie"]) {
     }
   }
 
-	function isIE () {
-		var user_agent = navigator.userAgent.toLowerCase();
-		return (user_agent.indexOf("msie") != -1) ? parseInt(user_agent.split("msie")[1]) : false;
-	};
 
 	var browser_warning = document.createElement("p");
 	browser_warning.classList.add("browser-warning");
 
-	switch (isIE()) {
+	switch (IEVersion()) {
 		case false:
 			browser_warning.innerText = "Internet Explorer 11 is not fully supported. Features such as dark mode and background music are disabled."
 			break;
 		case 10:
 			browser_warning.innerText = "Internet Explorer 10 is not supported. Most features are disabled, and the page may not function properly."
 			break;
-		default:
-			browser_warning.innerText = "Internet Explorer versions below 10 are completely unsupported. The page will not display properly."
-			break;		
 	};
 
 	var close_warning = document.createElement("button");
@@ -61,8 +63,6 @@ if (document.createElement("canvas").toDataURL("image/webp").indexOf("data:image
 	extension = ".png";
 };
 
-document.documentElement.style.setProperty("--earth-1-image", "url(/images/earth_1/1080p" + extension + ")");
-document.documentElement.style.setProperty("--earth-2-image", "url(/images/earth_2/1080p" + extension + ")");
 document.documentElement.style.setProperty("--electricity-2-image", "url(/images/electricity_2/1080p" + extension + ")");
 document.documentElement.style.setProperty("--ocean-2-image", "url(/images/ocean_2/1080p" + extension + ")");
 document.documentElement.style.setProperty("--road-1-image", "url(/images/road_1/1080p" + extension + ")");

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Unsupported Browser</title>
+	</head>
+	<body>
+		<p id="message"></p>
+		<script>
+			var element = document.getElementById("message");
+
+			if (window.document.documentMode) {
+				function IEVersion() {
+					var user_agent = navigator.userAgent.toLowerCase();
+					return (user_agent.indexOf("msie") != -1) ? parseInt(user_agent.split("msie")[1]) : false;
+				};
+
+				if (IEVersion() == 10 || !IEVersion()) {
+					document.location = "/";
+				};
+
+				element.innerText = "Internet Explorer versions below 10 are not supported due to its unsupported features. Internet Explorer has also been discontinued by Microsoft on June 15, 2022. Please switch to using Microsoft Edge or other browsers instead of Internet Explorer for security and more supported websites."
+			} else {
+				document.location = "/";
+			};
+		</script>
+	</body>
+</html>
