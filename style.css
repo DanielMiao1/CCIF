@@ -650,3 +650,8 @@ p.black {
 	display: block;
 	animation: scaleYAnimate 300ms ease-in-out;
 }
+
+#wrapper section:nth-of-type(10) > div {
+	padding-top: 10vh;
+	text-align: center;
+}
