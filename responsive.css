@@ -23,8 +23,7 @@
   }
 
   
-  #wrapper section:nth-of-type(5) > div::before,
-  #wrapper section:nth-of-type(9) > div::before {
+  #wrapper section:nth-of-type(5) > div::before {
     background: var(--background-primary);
   }
 
