@@ -106,6 +106,7 @@ section h3:not(.chapter) {
 	width: 100vw;
 	height: 100vh;
 	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 	text-align: center;
 	z-index: 102;
 }
