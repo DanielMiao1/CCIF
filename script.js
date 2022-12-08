@@ -28,7 +28,7 @@ if (parameters["ie"]) {
 
 	switch (IEVersion()) {
 		case false:
-			browser_warning.innerText = "Internet Explorer 11 is not fully supported. Features such as dark mode and background music are disabled."
+			browser_warning.innerText = "Internet Explorer 11 is not fully supported. Features such as dark mode and animations are disabled."
 			break;
 		case 10:
 			browser_warning.innerText = "Internet Explorer 10 is not supported. Most features are disabled, and the page may not function properly."

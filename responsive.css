@@ -29,13 +29,10 @@
 
   #wrapper section:nth-of-type(9) p {
     margin-top: 10vh;
-    color: var(--foreground-primary);
   }
 
   #wrapper section:nth-of-type(9) .animation {
     top: 10vh;
-    background: var(--background-primary);
-    border-right-color: var(--foreground-primary)
   }
 }
 

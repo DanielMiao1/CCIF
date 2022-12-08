@@ -48,7 +48,10 @@ function crossFade(element1, element2) {
 	element2.animate([{opacity: 0}, {opacity: 1}], {duration: 1000, iterations: 1});
 };
 
-function newChapterAnimation(chapter_number, name, white=false) {
+function newChapterAnimation(chapter_number, name, white) {
+  white = typeof white !== "undefined" ? white : false;
+
+
   var element = document.createElement("div");
   if (white) {
     element.classList.add("white");
