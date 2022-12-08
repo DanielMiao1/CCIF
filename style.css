@@ -656,3 +656,17 @@ p.black {
 	padding-top: 10vh;
 	text-align: center;
 }
+
+#attributions-container {
+	height: 70vh;
+	width: 80vw;
+	margin-left: 10vw;
+	margin-top: 5vh;
+	overflow-y: scroll;
+	position: relative;
+	display: block;
+}
+
+#attributions-container section * {
+	position: relative;
+}

@@ -50,7 +50,7 @@
   }
 }
 
-@media screen and (min-aspect-ratio: 17 / 9) {
+@media screen and (min-aspect-ratio: 18 / 9) {
   #wrapper section:nth-of-type(5) > div::before {
     background: var(--background-primary);
   }
